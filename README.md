@@ -60,7 +60,7 @@ Once the template is parsed from disk it’s ready to be used in the request han
 
 ```golang
 // main.go
-func(w http.ResponseWriter, r \*http.Request) {
+func(w http.ResponseWriter, r *http.Request) {
   tmpl.Execute(w, "data goes here")
 }
 ```
@@ -89,7 +89,7 @@ type TodoPageData struct {
 
 func main() {
     tmpl := template.Must(template.ParseFiles("layout.html"))
-    http.HandleFunc("/", func(w http.ResponseWriter, r \*http.Request) {
+    http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
     data := TodoPageData{
         PageTitle: "My TODO list",
         Todos: []Todo{
